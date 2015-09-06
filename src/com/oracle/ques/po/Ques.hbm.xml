@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oracle.ques.po">
+	<class name="Ques" table="T_Ques" lazy="false">
+		<id name="ques_Id">
+<!--  		    <generator class="native"/>  -->
+ 			<generator class="sequence"> 
+ 				<param name="sequence">ques_Id</param>
+ 			</generator> 
+
+		</id>
+		<property name="quesContent" not-null="true" length="100" />
+		<property name="quesAnstwer" not-null="true" length="100" />
+		<property name="quesType" not-null="true" length="100" />
+		<property name="creator" not-null="true" length="100" />
+		<property name="createDate" not-null="true" length="100" />
+		<property name="updater" not-null="true" length="100" />
+		<property name="updateDate" not-null="true" length="100" />
+
+	</class>
+</hibernate-mapping>

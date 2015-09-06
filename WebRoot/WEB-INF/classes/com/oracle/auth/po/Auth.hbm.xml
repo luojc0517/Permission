@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oracle.auth.po">
+	<class name="Auth" table="T_Auth">
+		<id  name="auth_Id">
+			<generator class="native"/>
+		</id>
+		<property name="authName" not-null="true" length="100"/>
+		<property name="authUrl" not-null="true" length="100"/>
+		<property name="authParentRoot" not-null="true" length="100"/>
+		<property name="authIsRoot" not-null="true" length="100"/>
+		<property name="creator" not-null="true" length="100"/>
+		<property name="createDate" not-null="true" length="100"/>
+		<property name="updater" not-null="true" length="100"/>
+		<property name="updateDate" not-null="true" length="100"/>
+		
+	</class>
+</hibernate-mapping>

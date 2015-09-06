@@ -1,0 +1,40 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	   <!-- mysqql 
+	      <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/spring_struts_hibernate</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		   <hibernate3的配置方式>
+		   <property name="current_session_context_class">thread</property>
+		  
+	   
+	   
+	   -->
+		
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+	    <property name="connection.username">test</property>
+		<property name="connection.password">test</property>
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="format_sql">true</property>
+		
+		
+		<property name="show_sql">true</property>
+		 
+		<mapping resource="com/oracle/user/po/User.hbm.xml"/>
+		<mapping resource="com/oracle/auth/po/Auth.hbm.xml"/>
+		<mapping resource="com/oracle/role/po/Role.hbm.xml"/>
+		<mapping resource="com/oracle/category/po/Category.hbm.xml"/>
+		<mapping resource="com/oracle/news/po/News.hbm.xml"/>
+		<mapping resource="com/oracle/ques/po/Ques.hbm.xml"/>
+		<mapping resource="com/oracle/test/po/Test.hbm.xml"/>
+	
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oracle.user.po">
+	<class name="User" table="T_User">
+		<id  name="user_Id">
+			<generator class="native"/>
+		</id>
+		<property name="userName" not-null="true" length="100"/>
+		<property name="password" not-null="true" length="100"/>
+		<property name="userTrueName" not-null="true" length="100"/>
+		<property name="userState" not-null="true" length="100"/>
+		<property name="creator" not-null="true" length="100"/>
+		<property name="createDate" not-null="true" length="100"/>
+		<property name="updater" not-null="true" length="100"/>
+		<property name="updateDate" not-null="true" length="100"/>
+		
+		<set name="auths" table="t_user_auth" lazy="true">
+		    <key column="user_id"></key>
+		    <many-to-many class="com.oracle.auth.po.Auth" column="auth_id"></many-to-many>
+		</set>
+		<set name="roles" table="t_user_role" lazy="true">
+		    <key column="user_id"></key>
+		    <many-to-many class="com.oracle.role.po.Role" column="role_id"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

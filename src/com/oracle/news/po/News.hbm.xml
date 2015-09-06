@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oracle.news.po">
+	<class name="News" table="T_News">
+		<id  name="news_Id">
+			<generator class="native"/>
+		</id>
+		<property name="newsTitle" not-null="true" length="100"/>
+		<property name="category" not-null="true" length="100"/>
+		<property name="newsContent" not-null="true" length="100"/>
+		<property name="creator" not-null="true" length="100"/>
+		<property name="createDate" not-null="true" length="100"/>
+		<property name="updater" not-null="true" length="100"/>
+		<property name="updateDate" not-null="true" length="100"/>
+		
+	</class>
+</hibernate-mapping>

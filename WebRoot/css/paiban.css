@@ -1,0 +1,12 @@
+.left {
+	width: 180px;
+	height: 100%;
+	float: left;
+}
+
+.head {
+	height: 50px;
+	margin-left: 180px;
+	margin-top: 0px;
+	background-color: #d6dff7;
+}

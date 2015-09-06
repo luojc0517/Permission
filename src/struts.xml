@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="do,,"></constant>
+
+
+	<constant name="struts.objectFactory.spring.autoWire" value="type" />
+
+	<package name="user" namespace="/" extends="struts-default">
+		<action name="User*" class="com.oracle.user.action.UserAction"
+			method="{1}">
+			<result name="add" type="redirectAction">UsergetAll</result>
+			<result name="getAll">/user.jsp</result>
+			<result name="get">/modifyUser.jsp</result>
+			<result name="login"  type="redirectAction">UsergetLeft</result>
+			<result name="tologin">/index.jsp</result>
+			<result name="fail">/login.jsp</result>
+			<result name="input">/add.jsp</result>
+		</action>
+	</package>
+	
+	<package name="auth" namespace="/auth" extends="struts-default">
+		<action name="Auth*" class="com.oracle.auth.action.AuthAction"
+			method="{1}">
+			<result name="add" type="redirectAction">AuthgetAll</result>
+			<result name="getAll">/Auth.jsp</result>
+			<result name="get">/modifyAuth.jsp</result>
+			<result name="input">/Auth.jsp</result>
+			<result name="addUser">/UserAuth.jsp</result>
+			<result name="addRole">/RoleAuth.jsp</result>
+		</action>
+	</package>
+
+	<package name="role" namespace="/role" extends="struts-default">
+		<action name="Role*" class="com.oracle.role.action.RoleAction"
+			method="{1}">
+			<result name="add" type="redirectAction">RolegetAll</result>
+			<result name="getAll">/Roles.jsp</result>
+			<result name="get">/modifyRole.jsp</result>
+			<result name="input">/Roles.jsp</result>
+			<result name="addUser">/UserRole.jsp</result>
+		</action>
+	</package>
+	
+	<package name="categ" namespace="/categ" extends="struts-default">
+		<action name="Categ*" class="com.oracle.category.action.CategoryAction"
+			method="{1}">
+			<result name="add" type="redirectAction">CateggetAll</result>
+			<result name="getAll">/categoryList.jsp</result>
+			<result name="get">/modifyCategory.jsp</result>
+			<result name="input">/addCategory.jsp</result>
+		</action>
+	</package>
+	
+	<package name="news" namespace="/news" extends="struts-default">
+		<action name="News*" class="com.oracle.news.action.NewsAction"
+			method="{1}">
+			<result name="add" type="redirectAction">NewsgetAll</result>
+			<result name="getAll">/newslist.jsp</result>
+			<result name="get">/modifyNews.jsp</result>
+			<result name="input">/addNews.jsp</result>
+		</action>
+	</package>
+	
+	<package name="ques" namespace="/ques" extends="struts-default">
+		<action name="Ques*" class="com.oracle.ques.action.QuesAction"
+			method="{1}">
+			<result name="add">/addQues.jsp</result>
+			<result name="input">/addQues.jsp</result>
+		</action>
+	</package>
+	
+	<package name="test" namespace="/test" extends="struts-default">
+		<action name="Test*" class="com.oracle.test.action.TestAction"
+			method="{1}">
+			<result name="add">/addQues.jsp</result>
+			<result name="input">/addQues.jsp</result>
+			<result name="getGrade">/grade.jsp</result>
+		</action>
+	</package>
+</struts>
